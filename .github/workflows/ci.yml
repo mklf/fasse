@@ -77,5 +77,5 @@ jobs:
         if: ${{ github.event_name == 'push' }}
         uses: coverallsapp/github-action@master
         with:
-          github-token: ${{ secrets.FOR_CI_CD }}
+          github-token: ${{ secrets.COVERALLS }}
           path-to-lcov: './lcov.info'
