@@ -1,0 +1,13 @@
+[package]
+name = "fasse"
+version = "0.1.0"
+authors = ["mklf <golifang1234@gmail.com>"]
+edition = "2018"
+description = "fasse mandatory description"
+repository = "https://github.com/mklf/fasse"
+license = "MIT OR Apache-2.0"
+readme = "README.md"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
