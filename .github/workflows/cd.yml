@@ -61,7 +61,7 @@ jobs:
             target/${{ matrix.target }}/release/fasse-${{ matrix.artifact_prefix }}.tar.gz
             target/${{ matrix.target }}/release/fasse-${{ matrix.artifact_prefix }}.sha256
         env:
-          GITHUB_TOKEN: ${{ secrets.FOR_CI_CD }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 #  publish-cargo:
 #    name: Publishing to Cargo
