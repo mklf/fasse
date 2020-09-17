@@ -61,18 +61,18 @@ jobs:
             target/${{ matrix.target }}/release/fasse-${{ matrix.artifact_prefix }}.tar.gz
             target/${{ matrix.target }}/release/fasse-${{ matrix.artifact_prefix }}.sha256
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.FOR_CI_CD }}
 
-  publish-cargo:
-    name: Publishing to Cargo
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@master
-      - uses: actions-rs/toolchain@v1
-        with:
-          toolchain: stable
-          override: true
-      - uses: actions-rs/cargo@v1
-        with:
-          command: publish
-          args: --token ${{ secrets.CARGO_API_KEY }} --allow-dirty
+#  publish-cargo:
+#    name: Publishing to Cargo
+#    runs-on: ubuntu-latest
+#    steps:
+#      - uses: actions/checkout@master
+#      - uses: actions-rs/toolchain@v1
+#        with:
+#          toolchain: stable
+#          override: true
+#      - uses: actions-rs/cargo@v1
+#        with:
+#          command: publish
+#          args: --token ${{ secrets.CARGO_API_KEY }} --allow-dirty
