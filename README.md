@@ -6,9 +6,7 @@
 [![Docs.rs](https://docs.rs/fasse/badge.svg)](https://docs.rs/fasse)
 [![CI](https://github.com/mklf/fasse/workflows/Continuous%20Integration/badge.svg)](https://github.com/mklf/fasse/actions)
 
-<!---
 [![Coverage Status](https://coveralls.io/repos/github/mklf/fasse/badge.svg?branch=master)](https://coveralls.io/github/mklf/fasse?branch=master)
--->
 ## Installation
 
 ### Cargo
