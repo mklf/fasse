@@ -1,8 +1,9 @@
+use fasse::FasseError;
 use fasse::Index;
 use rand::distributions::Uniform;
 use rand::{thread_rng, Rng};
 
-fn main() {
+fn main() -> Result<(), FasseError> {
     let d = 64;
     let nb = 100000;
     let nq = 10000;
@@ -23,6 +24,8 @@ fn main() {
     let mut index = fasse::IndexFlat::new(d, fasse::Metric::L2);
 
     println!("is_trained = {}", index.is_trained());
-    index.add(&xb[1..]).expect("add");
+    index.add(&xb)?;
     println!("ntotal= {}", index.ntotal());
+
+    Ok(())
 }

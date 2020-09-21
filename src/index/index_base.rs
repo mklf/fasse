@@ -11,6 +11,7 @@ pub struct IndexData {
     pub(crate) d: usize,      // vector dimension
     pub(crate) ntotal: usize, // total nb of indexed vectors
     pub(crate) is_trained: bool,
+    #[allow(dead_code)]
     pub(crate) metric: Metric,
 }
 
