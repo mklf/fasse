@@ -34,4 +34,16 @@ pub trait Index {
     fn ntotal(&self) -> usize {
         unimplemented!("ntotal");
     }
+
+    /// x: vectors to search size n * d
+    /// k: size of neareast neighbors(NN) for each vector
+    /// labels: output labels of the NNs
+    // dist: pairwise distances
+    fn search(
+        &self,
+        x: &[f32],
+        k: usize,
+        dists: &mut [f32],
+        labels: &mut [usize],
+    ) -> Result<(), FasseError>;
 }

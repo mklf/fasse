@@ -23,7 +23,10 @@ impl IndexFlat {
 impl Index for IndexFlat {
     fn add(&mut self, x: &[f32]) -> Result<(), FasseError> {
         if x.len() % self.meta.d != 0 {
-            return Err(FasseError::DimError { dim: self.meta.d });
+            return Err(FasseError::DimError {
+                dim: self.meta.d,
+                var: "x",
+            });
         }
         self.xb.extend_from_slice(x);
         self.meta.ntotal += x.len() / self.meta.d;
@@ -35,5 +38,28 @@ impl Index for IndexFlat {
     }
     fn ntotal(&self) -> usize {
         self.meta.ntotal
+    }
+
+    fn search(
+        &self,
+        x: &[f32],
+        k: usize,
+        dists: &mut [f32],
+        labels: &mut [usize],
+    ) -> Result<(), FasseError> {
+        if x.len() % self.meta.d != 0 {
+            return Err(FasseError::DimError {
+                dim: self.meta.d,
+                var: "x",
+            });
+        }
+        let n = x.len() / self.meta.d;
+        if dists.len() != n * k {
+            return Err(FasseError::SizeError("dist", n * k, dists.len()));
+        }
+        if labels.len() != n * k {
+            return Err(FasseError::SizeError("label", n * k, labels.len()));
+        }
+        Ok(())
     }
 }
