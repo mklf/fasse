@@ -60,6 +60,19 @@ impl Index for IndexFlat {
         if labels.len() != n * k {
             return Err(FasseError::SizeError("label", n * k, labels.len()));
         }
+
+        match self.meta.metric {
+            Metric::InnerProduct => {
+                
+
+            }
+            Metric::L2 => {}
+            Metric::Lp(p) => {}
+            _ => {
+                return Err(FasseError::MetricError(self.meta.metric));
+            }
+        }
+
         Ok(())
     }
 }

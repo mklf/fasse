@@ -1,4 +1,6 @@
 use crate::FasseError;
+
+#[derive(Debug, Copy, Clone)]
 pub enum Metric {
     InnerProduct,
     L2,
@@ -7,6 +9,7 @@ pub enum Metric {
     Lp(f32),
 }
 
+#[derive(Debug)]
 pub struct IndexData {
     pub(crate) d: usize,      // vector dimension
     pub(crate) ntotal: usize, // total nb of indexed vectors
