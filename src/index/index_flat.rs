@@ -62,12 +62,9 @@ impl Index for IndexFlat {
         }
 
         match self.meta.metric {
-            Metric::InnerProduct => {
-                
-
-            }
+            Metric::InnerProduct => {}
             Metric::L2 => {}
-            Metric::Lp(p) => {}
+            Metric::Lp(_p) => {}
             _ => {
                 return Err(FasseError::MetricError(self.meta.metric));
             }
