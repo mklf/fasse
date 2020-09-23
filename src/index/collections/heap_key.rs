@@ -30,12 +30,29 @@ impl PartialOrd for HeapKey {
     }
 }
 
-#[test]
-fn test_heap_key() {
-    let a = HeapKey { dist: 0.1, idx: 0 };
-    let b = HeapKey { dist: 0.12, idx: 1 };
-    let c = HeapKey { dist: 0.12, idx: 3 };
+#[cfg(test)]
+mod test {
+    use super::HeapKey;
+    use std::collections::BinaryHeap;
+    #[test]
+    fn test_heap_key() {
+        let a = HeapKey { dist: 0.1, idx: 0 };
+        let b = HeapKey { dist: 0.13, idx: 1 };
+        let c = HeapKey { dist: 0.12, idx: 3 };
+        let d = HeapKey { dist: 0.12, idx: 4 };
 
-    assert!(a > b);
-    assert_eq!(b,c);
+        assert!(a > b);
+        assert!(c > b);
+        assert_eq!(c, d);
+        assert_eq!(c, c);
+
+        let mut heap = BinaryHeap::new();
+        heap.push(a);
+        heap.push(b);
+        heap.push(c);
+        heap.push(d);
+
+        let values: Vec<_> = heap.iter().collect();
+        println!("{:?}", values);
+    }
 }
