@@ -12,7 +12,7 @@ readme = "README.md"
 
 [dependencies]
 thiserror= "1.0.21"
-blas-src = {version = "0.6", features=["intel-mkl"]}
+blas-src = {version = "0.7", features=["intel-mkl"]}
 
 [dev-dependencies]
 rand = "0.7.3"
