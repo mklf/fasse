@@ -66,9 +66,9 @@ dependencies = [
 
 [[package]]
 name = "blas-src"
-version = "0.6.1"
+version = "0.7.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a25f136d1bcc6fc28330077511a0646aaf75bc894e5532b1a33a93d814272328"
+checksum = "179fa99e83340433f9fe61b22cc88db2e310bb93923daac81795610f750208fb"
 dependencies = [
  "intel-mkl-src",
 ]
