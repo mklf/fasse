@@ -14,4 +14,4 @@ readme = "README.md"
 thiserror= "1.0.22"
 blas-src = {version = "0.7", features=["intel-mkl"]}
 [dev-dependencies]
-rand = "0.7.3"
+rand = "0.8.2"
